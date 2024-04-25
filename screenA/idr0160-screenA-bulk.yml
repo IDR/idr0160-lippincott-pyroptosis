@@ -1,0 +1,7 @@
+---
+target: "Screen:name:idr0160-lippincott-pyroptosis/screenA"
+include: "../bulk.yml"
+path: "idr0160-screenA-plates.tsv"
+columns:
+  - path
+
