@@ -1,0 +1,188 @@
+---
+name: idr0160-lippincott-pyroptosis/screenA
+version: 1
+
+defaults:
+  # Should the column be processed when creating bulk-annotations (yes/no)
+  include: no
+  # Columns type of the bulk-annotations column
+  type: string
+
+  # If non-empty a string used to separate multiple fields in a column
+  # White space will be stripped
+  split: ","
+  # Should this column be included in the clients (yes/no)
+  includeclient: yes
+  # Should this column be visible in the clients, if no the column should be
+  # hidden in the client but will still be indexed by the searcher (yes/no)
+  visible: yes
+  # Should empty values be omitted from the client display
+  omitempty: yes
+
+columns:
+  - name: Characteristics [Cell Type]
+    clientname: Cell Type
+    include: true
+
+  - name: Experimental Condition [Inhibitor]
+    clientname: Inhibitor
+    include: true
+
+  - name: Experimental Condition [Inhibitor Concentration]
+    clientname: Inhibitor Concentration
+    include: true
+
+  - name: Experimental Condition [Inhibitor Concentration Unit]
+    clientname: Inhibitor Concentration Unit
+    include: true
+
+  - name: Experimental Condition [Inducer 1]
+    clientname: Inducer 1
+    include: true
+
+  - name: Experimental Condition [Inducer 1 Concentration]
+    clientname: Inducer 1 Concentration
+    include: true
+
+  - name: Experimental Condition [Inducer 1 Concentration Unit]
+    clientname: Inducer 1 Concentration Unit
+    include: true
+
+  - name: Experimental Condition [Inducer 2]
+    clientname: Inducer 2
+    include: true
+
+  - name: Experimental Condition [Inducer 2 Concentration]
+    clientname: Inducer 2 Concentration
+    include: true
+
+  - name: Experimental Condition [Inducer 2 Concentration Unit]
+    clientname: Inducer 2 Concentration Unit
+    include: true
+
+  - name: Channels
+    clientname: Channels
+    include: true
+
+
+  ######################################################################
+  # mapr groups
+  ######################################################################
+
+  - group:
+      namespace: openmicroscopy.org/mapr/organism
+      columns:
+        - name: Characteristics [Organism]
+          clientname: Organism
+          include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/cell_line
+      columns:
+        - name: Characteristics [Cell Line]
+          clientname: Cell Line
+          include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/compound
+      columns:
+        - name: Compound 1 Name
+          clientname: Compound Name
+          include: yes
+        - name: Compound 1 PubChem CID
+          clientname: Compound Name URL
+          clientvalue: >
+            https://pubchem.ncbi.nlm.nih.gov/compound/{{ value|urlencode }}
+          include: true
+
+  - group:
+      namespace: openmicroscopy.org/mapr/compound
+      columns:
+        - name: Compound 2 Name
+          clientname: Compound Name
+          include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/compound
+      columns:
+        - name: Compound 3 Name
+          clientname: Compound Name
+          include: yes
+        - name: Compound 3 PubChem CID
+          clientname: Compound Name URL
+          clientvalue: >
+            https://pubchem.ncbi.nlm.nih.gov/compound/{{ value|urlencode }}
+          include: true
+
+  - group:
+      namespace: openmicroscopy.org/mapr/compound/supplementary
+      columns:
+        - name: Compound 1 Name
+          clientname: Compound Name
+          include: yes
+        - name: Compound 1 PubChem CID
+          clientname: PubChem CID
+          include: true
+        - name: Compound 1 PubChem URL
+          clientname: PubChem URL
+          include: true
+        - name: Compound 1 InChIKey
+          clientname: InChIKey
+          include: true
+        - name: Compound 1 SMILES
+          clientname: SMILES
+          include: true
+        - name: Compound 1 Control Type
+          clientname: Control Type
+          include: true
+
+  - group:
+      namespace: openmicroscopy.org/mapr/compound/supplementary
+      columns:
+        - name: Compound 2 Name
+          clientname: Compound Name
+          include: yes
+        - name: Compound 2 InChIKey
+          clientname: InChIKey
+          include: true
+        - name: Compound 2 SMILES
+          clientname: SMILES
+          include: true
+
+  - group:
+      namespace: openmicroscopy.org/mapr/compound/supplementary
+      columns:
+        - name: Compound 3 Name
+          clientname: Compound Name
+          include: yes
+        - name: Compound 3 PubChem CID
+          clientname: PubChem CID
+          include: true
+        - name: Compound 3 PubChem URL
+          clientname: PubChem URL
+          include: true
+        - name: Compound 3 InChIKey
+          clientname: InChIKey
+          include: true
+        - name: Compound 3 SMILES
+          clientname: SMILES
+          include: true
+        - name: Compound 3 Control Type
+          clientname: Control Type
+          include: true
+
+
+advanced:
+  well_to_images: yes
+  ignore_missing_primary_key: yes
+  primary_group_keys:
+    - namespace: openmicroscopy.org/mapr/organism
+      keys:
+        - Organism
+    - namespace: openmicroscopy.org/mapr/cell_line
+      keys:
+        - Cell Line
+    - namespace: openmicroscopy.org/mapr/compound
+      keys:
+        - Compound Name
+        - Compound Name URL
