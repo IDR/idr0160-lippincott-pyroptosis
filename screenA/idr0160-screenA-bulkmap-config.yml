@@ -8,9 +8,6 @@ defaults:
   # Columns type of the bulk-annotations column
   type: string
 
-  # If non-empty a string used to separate multiple fields in a column
-  # White space will be stripped
-  split: ","
   # Should this column be included in the clients (yes/no)
   includeclient: yes
   # Should this column be visible in the clients, if no the column should be
