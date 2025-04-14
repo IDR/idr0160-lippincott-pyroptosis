@@ -101,11 +101,6 @@ columns:
         - name: Compound 2 Name
           clientname: Compound Name
           include: yes
-        - name: Compound 2 PubChem CID
-          clientname: Compound Name URL
-          clientvalue: >
-            https://pubchem.ncbi.nlm.nih.gov/compound/{{ value|urlencode }}
-          include: true
 
   - group:
       namespace: openmicroscopy.org/mapr/compound
