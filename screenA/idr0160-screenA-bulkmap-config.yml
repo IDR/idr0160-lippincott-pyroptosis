@@ -144,6 +144,12 @@ columns:
         - name: Compound 2 Name
           clientname: Compound Name
           include: yes
+        - name: Compound 2 PubChem CID
+          clientname: PubChem CID
+          include: true
+        - name: Compound 2 PubChem URL
+          clientname: PubChem URL
+          include: true
         - name: Compound 2 InChIKey
           clientname: InChIKey
           include: true
