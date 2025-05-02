@@ -15,7 +15,7 @@ Study Organism Term Accession	9606
 Study Screens Number	1															
 Study External URL	https://github.com/WayScience/pyroptosis_signature_data_analysis	https://github.com/WayScience/pyroptosis_signature		
 Study BioImage Archive Accession												
-Study Public Release Date															
+Study Public Release Date	2025-05-08													
 																
 # Study Publication																
 Study PubMed ID	40202832															
